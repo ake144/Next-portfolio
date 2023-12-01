@@ -5,11 +5,11 @@ function About(){
         <>
    
     <div id='about' className='text-medium font-semibold text-center px-12 py-18 mx-8 m15-9 bg-gradient-to-r from-pink-500 to-purple-500 text-white rounded-lg shadow-lg'>
-      <p className=''>Hello! I'm Aklilu Tamirat, a passionate and dedicated Full Stack Web Developer.
+      <p className='text-2xl text-gray-100'>Hello! I'm Aklilu Tamirat, a passionate and dedicated Full Stack Web Developer.
         I am committed to creating exceptional digital experiences that captivate users and drive business growth.
        I thrive on solving complex problems and turning innovative ideas into reality. 
-           I am excited to collaborate with forward-thinking teams and contribute my expertise to projects that push the boundaries of what's possible in the digital world. 
-       <span className='text-1xl font-bold text-sky-300'> Let's work together to create exceptional digital experiences that leave a lasting impact</span>
+       I am excited to collaborate with forward-thinking teams and contribute my expertise to projects that push the boundaries of what&apos;s possible in the digital world.
+        <span className='text-1xl font-bold text-sky-300'> Let&apos;s work together to create exceptional digital experiences that leave a lasting impact</span>
 
           </p>
          </div>
