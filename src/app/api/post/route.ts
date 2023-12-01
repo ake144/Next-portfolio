@@ -2,28 +2,31 @@ import { NextRequest, NextResponse } from 'next/server';
 import prisma from '../../db'; // Replace with your Prisma instance
 
 export async function GET(request: NextRequest) {
-  const params = request.nextUrl.searchParams;
-  const id = params.get('id');
-  console.log('This is the ID obtained from the params:', id);
-
   let status = 200;
   let data: any;
 
   try {
     const posts = await prisma.blogPosts.findMany();
+
     if (posts) {
-      data = posts;
+      // Convert BigInt types to strings or numbers in the response
+      const postsWithConvertedBigInt = posts.map((post) => ({
+        ...post,
+        id: String(post.id), // Convert BigInt 'id' to string
+        // Other conversions if needed
+      }));
+
+      data = postsWithConvertedBigInt;
     }
   } catch (error) {
     console.error('Error fetching blog posts:', error);
+    status = 500; // Set an appropriate error status code
+    data = { error: 'Error fetching blog posts' };
   }
 
-  return new NextResponse(JSON.stringify(data), { status:201 });
+  return new NextResponse(JSON.stringify(data), { status });
 }
 
-
 export  async function POST(request: NextRequest) {
- 
-
   
 }

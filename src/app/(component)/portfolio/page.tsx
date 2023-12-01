@@ -1,14 +1,15 @@
 import Link from 'next/link';
 import React, { useEffect, useState } from 'react';
+import prisma from '@/app/db';
 
 
 async function  Posts() {
   
-const posts = await prisma?.porojects.findMany()
+const posts = await prisma?.porojects?.findMany()
   return (
-    <div id='works' className="w-full bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
+    <div id='works' className="w-full  rounded-lg shadow ">
     <div className="grid grid-cols-2 gap-4 min-h-screen">
-      <div className="col-span-1 px-2 py-2 rounded-lg mx-4 my-5 bg-gray-800 text-white font-bold text-3xl">
+      <div className="col-span-1 px-2 py-2 rounded-lg mx-4 my-5  text-white font-bold text-3xl">
         <div>WordPress Websites</div>
         <div className="col-span-2 rounded-sm h-40 mx-10 my-8 px-4 py-2 text-center bg-purple-300">
           <a
@@ -33,7 +34,7 @@ const posts = await prisma?.porojects.findMany()
         </div>
            
       </div>
-      <div className="col-span-1 px-2 py-2 rounded-lg mx-4 my-5 bg-gray-800 text-white font-bold text-3xl">
+      <div className="col-span-1 px-2 py-2 rounded-lg mx-4 my-5  text-white font-bold text-3xl">
         <div>Other Projects</div>
         <div className="col-span-2 rounded-sm bg-yellow-300 h-40 mx-10 my-8 px-4 py-2 text-center flex items-center justify-center">
           <img

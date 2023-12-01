@@ -1,9 +1,11 @@
 'use client'
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Tilt } from 'react-tilt';
 import prisma from '../db';
-import { GetServerSideProps } from 'next';
+import { GetServerSideProps, NextPage } from 'next';
+
+
 
 type PostProps = {
   title: string;
@@ -16,10 +18,35 @@ type Props = {
   posts: PostProps[];
 };
 
-const  ShowPosts=async()=>{
-  
-const posts = await prisma.blogPosts.findMany()
-console.log(ShowPosts)
+
+
+
+const  ShowPosts=()=>{
+  const [posts, setPosts] = useState([]);
+  const [isLoading, setLoading] = useState(true);
+
+  useEffect(() => {
+    fetch('/api/post')
+      .then((res) => res.json())
+      .then((data) => {
+        // Convert BigInt to string or number before setting state
+        const postsWithConvertedBigInt = data.map((post: { id: any; }) => ({
+          ...post,
+          id: String(post.id), // Convert BigInt 'id' to string
+          // Other conversions if needed
+        }));
+
+        setPosts(postsWithConvertedBigInt);
+        setLoading(false);
+        console.log(postsWithConvertedBigInt)
+        console.log(posts)
+      })
+      .catch((error) => {
+        console.error('Error fetching posts:', error);
+        setLoading(false);
+      });
+  }, []);
+
   return (
     <div className='bg-slate-700' id="blog">
      <Link href={{ pathname: `/blog/add` }}>
@@ -27,7 +54,7 @@ console.log(ShowPosts)
           Add a Post
         </p>
       </Link>
-
+        
       <div className="min-w-screen grid grid-cols-3 my-20 gap-6">
         {posts?.map((post:any) => (
             <div key={post.id}>
@@ -71,11 +98,12 @@ console.log(ShowPosts)
             </Link>
             </Tilt>
           </div >
-          
+      
         ))}
-      </div>
+      </div>  
     </div>
   );
 };
+
 
 export default ShowPosts;

@@ -7,7 +7,7 @@ import { FaTelegram } from 'react-icons/fa';
 function Contact() {
   return (
     <>
-      <div id='contact' className="min-w-screen min-h-full ">
+      <div id='contact' className="min-w-screen top-50% my-8">
         <div className="relative flex flex-col items-center justify-center text-center text-5xl h-[50vh] my-[3rem] py-[4rem] min-w-screen py-12 border-t-2 border-b-2 border-yellow-400 place-items-center">
           <div className="absolute -top-5 left-1/2 -translate-x-1/2 text-3xl font-bold text-yellow-400 bg-black px-2">Contact Me</div>
           <div className="flex">
