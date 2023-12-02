@@ -1,9 +1,8 @@
 'use client'
-import React, { useEffect, useState } from 'react';
+import React, { Suspense, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Tilt } from 'react-tilt';
-import prisma from '../db';
-import { GetServerSideProps, NextPage } from 'next';
+import Loading from './loading';
 
 
 
@@ -50,16 +49,13 @@ const  ShowPosts=()=>{
   return (
     <div className='bg-slate-700' id="blog">
      <Link href={{ pathname: `/blog/add` }}>
-        <p className="text-white bg-yellow-700 hover:bg-primary-800 focus:ring-4 focus:ring-primary-300 font-medium rounded-lg text-sm px-4 lg:px-5 py-2 lg:py-2.5 mr-2 dark:bg-primary-600 dark:hover:bg-primary-700 focus:outline-none dark:focus:ring-primary-800">
-          Add a Post
-        </p>
+     <button className="btn btn-primary font-extrabold font-serif">Add New Post</button>
       </Link>
-        
+        <Suspense fallback={<Loading />}>
       <div className="min-w-screen grid grid-cols-3 my-20 gap-6">
         {posts?.map((post:any) => (
             <div key={post.id}>
            <Tilt>
-            <h4 className='text-sky-100'>hello</h4>
             <Link href={{ pathname: `/blog/${post.id}` }}>
                 <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                   <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
@@ -101,7 +97,9 @@ const  ShowPosts=()=>{
       
         ))}
       </div>  
+      </Suspense>
     </div>
+    
   );
 };
 

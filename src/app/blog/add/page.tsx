@@ -1,9 +1,6 @@
 
-import { error } from 'console';
-import { useState, FormEvent } from 'react';
-import { buffer } from 'stream/consumers';
-
 export default function AddPost() {
+
   const createPost = async (formData: FormData) => {
     'use server'
   
@@ -47,6 +44,7 @@ export default function AddPost() {
         data,
       });
       console.log('Post created:', createdPost);
+      
     } catch (error) {
       console.error('Error creating post:', error);
       // Handle error accordingly
