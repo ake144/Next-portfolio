@@ -41,7 +41,7 @@ const Navbar=()=> {
                 <ul className="p-4 m-3">
                   <li><Link href='/blog'  className={`link ${pathname === '/blog' ? 'active' : ''}`} >Blog Posts</Link></li>
                   <li><Link href='/blog/add'  className={`link ${pathname === '/blog/add' ? 'active' : ''}`} >Add Post</Link></li>
-                </ul>
+                </ul>]
               </details>
             </li>
             <li><Link href='/contact'  className={`link ${pathname === '/contact' ? 'active' : ''}`} >Contact</Link></li>

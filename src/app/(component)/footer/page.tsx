@@ -1,8 +1,9 @@
 
 
 const Footer = ()=>{
+  
 return(<>
-<footer className="footer p-10 bg-base-300 text-base-content">
+<footer className="footer p-10 bg-base-100  text-base-content">
     <div className="w-1/3">
         <nav>
           <header className="footer-title">about me</header>
@@ -14,8 +15,10 @@ return(<>
   
   <div className="w-auto flex">
       <nav className="flex flex-col">
-         <header className="footer-title w-2/6 ">Services</header>
-          <a href="" className="link link-hover py-1">Branding</a>
+         <header className="footer-title w-2/6 ">Services 
+         </header>
+              <p className="text-lg font-bold text-[rgb(197,99,111)]" >Soon</p>
+          <a href="#" className="link link-hover py-1">Branding</a>
           <a href="#" className="link link-hover py-1">Design</a>
           <a href="#" className="link link-hover py-1">Marketing</a>
           <a href="#" className="link link-hover py-1">Advertisement</a>

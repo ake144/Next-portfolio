@@ -45,6 +45,7 @@ const  ShowPosts=()=>{
         setLoading(false);
       });
   }, []);
+ 
 
   return (
     <div className='bg-slate-700' id="blog">

@@ -1,4 +1,5 @@
 
+
 export default function AddPost() {
 
   const createPost = async (formData: FormData) => {
@@ -21,9 +22,7 @@ export default function AddPost() {
         ''
       );
       const base64 = btoa(base64String);
-  
-   
-      const description = formData.get('description') as string;
+    const description = formData.get('description') as string;
       const topic = formData.get('topic') as string; // Get topic from form data
       const link = formData.get('link') as string; // Get link from form data
   
@@ -43,6 +42,8 @@ export default function AddPost() {
       const createdPost = await prisma?.blogPosts.create({
         data,
       });
+      alert('Form submitted successfully!');
+     
       console.log('Post created:', createdPost);
       
     } catch (error) {
