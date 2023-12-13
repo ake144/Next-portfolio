@@ -14,14 +14,15 @@ export default function Home() {
         <img className="h-24 mx-auto sm:flex-shrink-0 sm:m-0 rounded-full" src="./man.png.png" alt="Akeja" />
         <div className="text-center font-light space-y-4">
           <div className="space-y-2">
-         
-          <p className='text-1xl'>   I'm  <span className='text-5xl p-x-3 mx-4 text-purple-200'> Aklilu Tamirat, </span> <br/>
-           a Full Stack Web Developer</p>
-          </div>
-        <h3 className='text-2xl font-lg text-[rgb(195,156,246)] font-bold'>Let's Collaborate!</h3>  
-          <p className='text-1xl'>
-Got a project in mind? Let's turn ideas into reality! <br />Explore my portfolio or reach out to start the conversation.</p>
-          <div className="flex flex-row m-4 p-7 my-7 justify-center">
+          <p className="text-1xl">I'm <span className="text-5xl p-x-3 mx-4 text-purple-200">Aklilu Tamirat, &apos;</span><br/>
+              a Full Stack Web Developer
+            </p>
+            </div>
+            <h3 className="text-2xl font-lg text-[rgb(195,156,246)] font-bold">Let's Collaborate!</h3>
+            <p className="text-1xl">
+              Got a project in mind? Let's turn ideas into reality!<br />Explore my portfolio or reach out to start the conversation.
+            </p>
+            <div className="flex flex-row m-4 p-7 my-7 justify-center">
             <div>
               <Link href="/contact">
                 <button className="px-4 py-2 my-5 text-sm text-violet rounded-full border hover:border-transparent 

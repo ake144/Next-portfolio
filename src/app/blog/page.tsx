@@ -18,8 +18,6 @@ type Props = {
 };
 
 
-
-
 const  ShowPosts=()=>{
   const [posts, setPosts] = useState([]);
   const [isLoading, setLoading] = useState(true);
