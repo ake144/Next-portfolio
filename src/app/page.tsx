@@ -7,14 +7,22 @@ export default function Home() {
     <>
     <main className="flex min-h-screen flex-col items-center justify-between p-24">
       <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        {/* Your content here */}
+     
       </div>
   
       <div className="relative flex flex-col items-center justify-center w-full">
-        <Image className="h-24 mx-auto sm:flex-shrink-0 sm:m-0 rounded-full" src="./man.png.png" alt="Akeja" />
+      <Image
+  className="h-24 mx-auto sm:flex-shrink-0 sm:m-0 rounded-full"
+  src="/man.png.png"
+  alt="Akeja"
+  width={100}
+  height={100}
+/>
+
+
         <div className="text-center font-light space-y-4">
           <div className="space-y-2">
-          <p className="text-1xl">I&apos;m <span className="text-5xl p-x-3 mx-4 text-purple-200">Aklilu Tamirat, &apos;</span><br/>
+          <p className="text-1xl">I&apos;m <span className="text-5xl p-x-3 mx-4 text-purple-200">Aklilu Tamirat</span><br/>
    a Full Stack Web Developer</p>
             </div>
             <h3 className="text-2xl font-lg text-[rgb(195,156,246)] font-bold">Let&apos;s Collaborate!</h3>
