@@ -29,7 +29,7 @@ export default async function blogDetail({
         <div className="max-w-3xl mx-auto   shadow-lg rounded-lg overflow-hidden">   </div>
         <img
               className="w-full h-64 object-cover"
-                      src={post?.image}
+                      src={"data:image/jpeg;base64,"+post?.image}
                       alt={`${post?.topic}`}
                   />
                <h4 className='text-center text-white my-2 font-bold text-2xl'>{post?.topic}</h4>

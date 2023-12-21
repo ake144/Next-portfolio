@@ -3,6 +3,7 @@ import React, { Suspense, useEffect, useState } from 'react';
 import Link from 'next/link';
 import { Tilt } from 'react-tilt';
 import Loading from './loading';
+import Image from 'next/image'
 
 
 
@@ -19,37 +20,42 @@ type Props = {
 
 
 const  ShowPosts=()=>{
-  const [posts, setPosts] = useState([]);
+  const [posts, setPosts] = useState<PostProps[]>([]);
   const [isLoading, setLoading] = useState(true);
 
   useEffect(() => {
-    fetch('/api/post')
-      .then((res) => res.json())
-      .then((data) => {
-        // Convert BigInt to string or number before setting state
-        const postsWithConvertedBigInt = data.map((post: { id: any; }) => ({
-          ...post,
-          id: String(post.id), // Convert BigInt 'id' to string
-          // Other conversions if needed
-        }));
-
-        setPosts(postsWithConvertedBigInt);
+    const fetchData = async () => {
+      try {
+        const response = await fetch('/api/post');
+        const postData = await response.json();
+        setPosts(postData);
         setLoading(false);
-        console.log(postsWithConvertedBigInt)
-        console.log(posts)
-      })
-      .catch((error) => {
+        console.log(postData);
+      } catch (error) {
         console.error('Error fetching posts:', error);
         setLoading(false);
-      });
+      }
+    };
+
+    fetchData();
   }, []);
+
+
  
+if(isLoading){
+  return(
+  <div className='w-screen min-h-full'>
+  <p>Loading....</p>
+  </div>)
+}
 
   return (
     <div className='bg-slate-700' id="blog">
      <Link href={{ pathname: `/blog/add` }}>
      <button className="btn btn-primary font-extrabold font-serif">Add New Post</button>
       </Link>
+
+
         <Suspense fallback={<Loading />}>
       <div className="min-w-screen grid grid-cols-3 my-20 gap-6">
         {posts?.map((post:any) => (
@@ -59,9 +65,9 @@ const  ShowPosts=()=>{
                 <div className="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
                   <h5 className="mb-2 text-2xl font-bold tracking-tight text-gray-900 dark:text-white">
                     {post.topic} <br />
-                    <img
+                     <img        
                       className="w-full h-64 object-cover"
-                      src={post.image}
+                      src={"data:image/jpeg;base64,"+post.image}
                       alt={`${post.topic}`}
                     />
                     <a className="font-light text-sm text-yellow-600 text-3" href={post.link}>
@@ -88,6 +94,7 @@ const  ShowPosts=()=>{
                       </svg>
                     </div>
                   </Link>
+               
                 </div>
               
             </Link>
