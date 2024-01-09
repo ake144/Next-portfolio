@@ -10,7 +10,7 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model blogPosts {
+model akeja_blogpost {
   id          Int    @id @unique @default(autoincrement())
   topic       String  @db.VarChar(255)
   description String
@@ -18,10 +18,10 @@ model blogPosts {
   image       String 
 }
 
-model Porojects {
- id            Int  @id  @default(autoincrement())
- name          String   @db.VarChar(244)
- description   String
- link          String  @db.VarChar(100)
- image         String
+model akeja_react {
+  id          Int    @id @unique @default(autoincrement())
+  topic       String  @db.VarChar(255)
+  description String
+  link        String @db.VarChar(200)
+  image       String 
 }

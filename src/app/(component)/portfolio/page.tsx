@@ -5,7 +5,7 @@ import prisma from '@/app/db';
 
 async function  Posts() {
   
-const posts = await prisma?.porojects?.findMany()
+const posts = await prisma?.akeja_react?.findMany()
   return (
     <div id='works' className="w-full  rounded-lg shadow ">
       <p className='mx-10 my-16 block mb-1 font-extrabold text-lg dark:text-accent-400 capitalize'>Work</p>

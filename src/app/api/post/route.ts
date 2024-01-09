@@ -6,7 +6,7 @@ import prisma from '../../db'; // Replace with your Prisma instance
 //   let data: any;
 
 //   try {
-//     const posts = await prisma.blogPosts.findMany();
+//     const posts = await prisma.akeja_blogpost.findMany();
 
 //     if (posts) {
 //       // Convert BigInt types to strings or numbers in the response
@@ -31,12 +31,12 @@ export async function GET(request: NextRequest) {
   let data: any;
 
   try {
-    const posts = await prisma.blogPosts.findMany();
+    const posts = await prisma.akeja_react.findMany();
 
     if (posts) {
       const postsWithImages = await Promise.all(
         posts.map(async (post) => {
-          const imageData = await prisma.blogPosts.findFirst({
+          const imageData = await prisma.akeja_blogpost.findFirst({
             where: { id: post.id },
           });
           return {
@@ -50,13 +50,14 @@ export async function GET(request: NextRequest) {
       data = postsWithImages;
     }
   } catch (error) {
-    console.error('Error fetching blog posts:', error);
+    console.error("Error fetching blog posts:", error);
     status = 500;
-    data = { error: 'Error fetching blog posts' };
+    data = { error: "Error fetching blog posts" };
   }
 
   return new NextResponse(JSON.stringify(data), { status });
 }
+
 
 
 
