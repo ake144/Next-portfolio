@@ -1,3 +1,4 @@
+import Link from "next/link";
 
 export default function AddPost() {
   const createPost = async (formData: FormData) => {
@@ -46,11 +47,14 @@ export default function AddPost() {
     }
   };
 
-  return (
+  return (<>
+       <Link href={{ pathname: `/blog` }}>
+     <button className="btn btn-primary font-extrabold font-serif"> View Posts</button>
+      </Link>
     <form
       action={createPost}
       method="POST"
-      className="flex flex-col gap-4 text-black"
+      className="flex flex-col gap-4 text-black mt-3"
     >
       <input
         type="text"
@@ -79,5 +83,5 @@ export default function AddPost() {
         POST
       </button>
     </form>
-  );
+    </>);
 }
