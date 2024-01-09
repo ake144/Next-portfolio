@@ -8,7 +8,7 @@ export const getById=async(id:string)=>{
 export const getAll = async()=>{
 
 
-    return await prisma?.blogPosts.findMany()
+    return await prisma?.akeja_react.findMany()
 
 }
 export const updateById =async ()=>{
