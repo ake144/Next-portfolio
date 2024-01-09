@@ -133,7 +133,7 @@ const posts = await prisma?.akeja_react?.findMany()
         <div  className='py-2 mx-10 my-5'>
         <div className="py-2 mx-12 card w-96 bg-base-100 shadow-xl">
         <div className="card-body">
-          <h2 className="card-title">{item.name}</h2>
+          <h2 className="card-title">{item.topic}</h2>
           <p>{item.description}</p>
           <div className="card-actions justify-end">
           <a href={item.link} className="btn btn-primary font-sans">Visit site</a>
