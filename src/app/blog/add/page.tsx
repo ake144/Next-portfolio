@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import prisma from "@/app/db";
+
 export default function AddPost() {
   const createPost = async (formData: FormData) => {
     "use server";
