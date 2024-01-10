@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import prisma from "@/app/db";
 
 export default async function blogDetail({
     params,
