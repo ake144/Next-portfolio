@@ -1,31 +1,5 @@
 import { NextRequest, NextResponse } from 'next/server';
-import prisma from '../../db'; // Replace with your Prisma instance
-
-// export async function GET(request: NextRequest) {
-//   let status = 200;
-//   let data: any;
-
-//   try {
-//     const posts = await prisma.akeja_blogpost.findMany();
-
-//     if (posts) {
-//       // Convert BigInt types to strings or numbers in the response
-//       const postsWithConvertedBigInt = posts.map((post) => ({
-//         ...post,
-//         id: String(post.id), // Convert BigInt 'id' to string
-//         // Other conversions if needed
-//       }));
-
-//       data = postsWithConvertedBigInt;
-//     }
-//   } catch (error) {
-//     console.error('Error fetching blog posts:', error);
-//     status = 500; // Set an appropriate error status code
-//     data = { error: 'Error fetching blog posts' };
-//   }
-
-//   return new NextResponse(JSON.stringify(data), { status });
-// }
+import prisma from '../../db'; // 
 export async function GET(request: NextRequest) {
   let status = 200;
   let data: any;

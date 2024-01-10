@@ -13,7 +13,6 @@ const Loading=()=> {
         <div className="skeleton h-32 w-full"></div>
       </div>
     );
-  
     return (
       <>
         <LoadingSkeleton />
