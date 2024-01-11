@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
-import prisma from '../../db'; // 
+import prisma from "@/app/db";
+
 export async function GET(request: NextRequest) {
   let status = 200;
   let data: any;

@@ -9,7 +9,7 @@ export default async function blogDetail({
 
 
 {      const id = params.id;
-    const post = await prisma?.akeja_blogpost.findUnique({
+    const post = await prisma?.akeja_react.findUnique({
         where: {
           id: parseInt(id), // Assuming 'id' is a numeric identifier
         },
