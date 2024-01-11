@@ -6,7 +6,7 @@ settings:
 
 dependencies:
   '@prisma/client':
-    specifier: ^5.7.0
+    specifier: ^5.8.0
     version: 5.8.0(prisma@5.8.0)
   next:
     specifier: 14.0.3
